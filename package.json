@@ -1,6 +1,6 @@
 {
   "name": "react-nested-file-tree",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React component for file directory",
   "repository": {
     "type": "git",
@@ -9,12 +9,12 @@
   "main": "lib/NestedFileTreeView.js",
   "style": "dist/default.css",
   "scripts": {
-    "build:lib": "NODE_ENV=production babel src -d lib --ignore index.js,__test__/*",
-    "build:dist": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "build:lib": "cross-env NODE_ENV=production babel src -d lib --ignore index.js,__test__/*",
+    "build:dist": "cross-env NODE_ENV=production webpack -p --config webpack.production.config.js",
     "lint": "snazzy --verbose",
     "test": "./node_modules/karma/bin/karma start",
     "example": "webpack-dev-server --config example/webpack.config.js --content-base example",
-    "compileexample": "NODE_ENV=production webpack -p --config example/webpack.config.js --content-base example"
+    "compileexample": "cross-env NODE_ENV=production webpack -p --config example/webpack.config.js --content-base example"
   },
   "keywords": [
     "react",
@@ -28,8 +28,8 @@
   "author": "woodpig07@gamil.com",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -41,9 +41,10 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.26.1",
-    "enzyme": "^2.6.0",
+    "enzyme": "^3.5.0",
     "es5-shim": "^4.5.9",
     "es6-shim": "^0.35.2",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -56,9 +57,8 @@
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.2.0",
-    "react": "^15.4.1",
-    "react-addons-test-utils": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "sinon": "^1.17.6",
     "snazzy": "^5.0.0",
     "style-loader": "^0.13.1",
@@ -74,5 +74,8 @@
       "karma.conf.js"
     ],
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
   }
 }
